@@ -1,0 +1,1 @@
+# backend_takehome_stripped

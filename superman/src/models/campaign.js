@@ -10,7 +10,7 @@ export const SUPPORTED_SOCIAL_MEDIA_PLATFORMS = ["facebook", "twitter", "instagr
 export const CAMPAIGN_TYPE_ENCOURAGE_REFERRALS = `encourageReferrals`;
 export const CAMPAIGN_TYPE_ENCOURAGE_PURCHASES = `encouragePurchases`;
 
-const campaignTypeTracker = "PURCHASES;";
+const campaignTypeTracker = "PURCHASES";
 
 export var hooks = {
 	list: function (model, extra) {

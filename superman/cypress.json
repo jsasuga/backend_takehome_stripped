@@ -1,0 +1,8 @@
+{
+    "video": true,
+    "pluginsFile": false,
+    "defaultCommandTimeout" : 12000,
+    "viewportWidth": 1600,
+    "viewportHeight": 1200,
+    "chromeWebSecurity": false
+}

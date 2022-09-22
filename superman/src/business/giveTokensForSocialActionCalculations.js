@@ -1,0 +1,1 @@
+export const UPLOAD_SECRET_KEY = `m2t2iwRpNy7FmQ45uttsRLdpNrxq8PApxrtwgoU25hqJYhci9MBQGE4wBeVhGh6E4QaaEYipqKAwBnaxs3cDL3AmbYG9hegAXWzXaw73SJdu5Ahsd5ZpS9HxJGWhbseZ`;

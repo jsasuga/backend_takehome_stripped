@@ -1,0 +1,6 @@
+* widget-specific routes
+
+/widget/<subcategory>/<name
+
+  i.e.
+  /widget/auth/createUserAndLogin

@@ -1,0 +1,56 @@
+{
+    "name": "superman",
+    "version": "1.0.0",
+    "description": "Generic backend for Authenticiti web apps.",
+    "main": "app.js",
+    "scripts": {
+        "kill_nodemon_cypress": "./scripts/kill_nodemon.sh '.*cypress'",
+        "co": "npm run cypress:open",
+        "cypress:run": "./scripts/kill_nodemon.sh '.*cypress'; DEBUG=cypress:electron node_modules/.bin/nodemon -x 'node_modules/.bin/cypress run' --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log app.js",
+        "e2es": "npm run kill_nodemon_cypress; DEBUG=cypress:electron node_modules/.bin/nodemon -x 'node_modules/.bin/cypress run -c ignoreTestFiles=**/widget/** --spec \"cypress/integration/**/*\"' --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log",
+        "units": "./scripts/kill_nodemon.sh 'jest' && node_modules/.bin/nodemon -x 'jest --config ./jest.config.js' --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log",
+        "once_e2es": "npm run once_e2es_backend; npm run once_e2es_fullstack",
+        "once_units": "jest --config ./jest.config.js",
+        "serve": "./scripts/kill_nodemon.sh app.js; export SEED_WITH_TEST_DATA=true && rm -f ./db/* && node_modules/.bin/nodemon --ignore './src/testdata/**' --ignore './db/**' --ignore pipes_output.log app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@authenticiti.bitbucket.org:authenticiti/superman.git"
+    },
+    "author": "Graham Luke",
+    "type": "module",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/plugin-transform-runtime": "^7.18.0",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.16.11",
+        "@shopify/shopify-api": "^2.1.0",
+        "@supercharge/strings": "^1.25.0",
+        "async-mutex": "^0.3.2",
+        "babel-preset-env": "^1.7.0",
+        "bcrypt": "^5.0.1",
+        "body-parser": "^1.20.0",
+        "core-js": "^3.22.7",
+        "crypto-js": "^4.1.1",
+        "csvtojson": "^2.0.10",
+        "cypress": "=9.2.1",
+        "cypress-file-upload": "^5.0.8",
+        "cypress-real-events": "^1.7.0",
+        "date-and-time": "^2.3.1",
+        "dotenv": "^16.0.0",
+        "express": "=4.17.2",
+        "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.21",
+        "minimist": "^1.2.6",
+        "nodemon": "^2.0.15",
+        "shopify": "^0.1.0",
+        "ulid": "^2.3.0",
+        "winston": "^3.5.0"
+    },
+    "devDependencies": {
+        "axios": "^0.27.2",
+        "cors": "^2.8.5",
+        "jest": "=27.4",
+        "regenerator-runtime": "^0.13.9"
+    }
+}

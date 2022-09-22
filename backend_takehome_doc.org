@@ -1,0 +1,61 @@
+Backend Engineer Test
+
+We expect you to understand our architecture. We will test your coding skills too - debugging, testing etc. Primarily, we are checking your ability to read our code, understand it, and work with it.
+
+Commands:
+start the backend:
+- $ npm run serve
+run the unit tests
+- $ npm run units
+run the end-to-end tests
+- $ npm run e2es
+
+Key Areas of Interest:
+- example feature:
+- route: /api/giveTokensForSocialAction/create
+- this route will give you an example of a similar feature
+- look here for clues here on how you should design your implementation
+
+Your Tasks:
+- Write a feature that gives out tokens to users.
+    - I want to call a route and give X tokens to the user-base
+- Write tests
+    - test your feature
+
+Your Feature in Detail:
+- I want to call a route that lets me distribute tokens to the user base
+- I will supply two pieces of data as input
+- the number of tokens I want to distribute
+- the ID for the brand that owns the token
+
+- you will iterate through the users, giving out a fraction of the total to each user
+    - every user will receive the same number of tokens
+    - if I am distributing 10 tokens, and there are 2 users, each user should receive 5 tokens
+    - you can give out fractions of a token - like 0.2 tokens
+    - don’t worry about rounding errors
+    - for example, if you have 3 users, and you want to give out 10 tokens, you can give out 3.33 tokens to each user
+    - rounding to two decimal places is fine
+
+- each user will receive tokens for the brand in question only
+- we supply the brand ID in the request
+- a user will have a different number of tokens for each brand
+- for example, a user may have 10 Nike tokens and 3 Adidas tokens
+- your route will distribute tokens for only one brand
+- you can assume that the brand already exists
+
+
+Testing:
+- you should write automated tests for your feature
+- unit tests in Jest
+- E2E tests in Cypress
+- you can cover as much of your code as you want
+- however, if we find bugs in your code, that's on you
+- you must write at least some unit tests and some E2E tests
+- one of each is fine
+    - write tests to the level of coverage that you think is best
+
+What to Think About:
+- We expect you to read our code and learn about our architecture
+- Keep in mind that we are looking for consistency
+- There is no sense in doing something in a radically different way from how we already do it
+- If something is confusing, be sure to ask us about it in email
